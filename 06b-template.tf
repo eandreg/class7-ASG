@@ -6,7 +6,7 @@ resource "aws_launch_template" "web_tier_lt" {
 
   image_id               = "ami-07860a2d7eb515d9a"
   instance_type          = "t3.micro"
-  vpc_security_group_ids = [aws_security_group.web_lb.id]
+  vpc_security_group_ids = [aws_security_group.web_ec2_sg.id]
   user_data              = filebase64("./scripts/linux-script1.sh")
 
   tags = {
